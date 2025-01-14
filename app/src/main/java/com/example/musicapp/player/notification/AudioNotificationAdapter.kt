@@ -14,7 +14,7 @@ import com.bumptech.glide.request.transition.Transition
 
 
 @UnstableApi
-class JetAudioNotificationAdapter(
+class AudioNotificationAdapter(
     private val context: Context,
     private val pendingIntent: PendingIntent?
 ) : PlayerNotificationManager.MediaDescriptionAdapter {

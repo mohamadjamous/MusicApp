@@ -24,9 +24,18 @@ class JetAudioServiceHandler @Inject constructor(
 
     private var job: Job? = null
 
+    init {
+        exoPlayer.addListener(this)
+    }
+
 
     fun addMediaItem(mediaItem: MediaItem) {
         exoPlayer.addMediaItem(mediaItem)
+        exoPlayer.prepare()
+    }
+
+    fun setMediaItemList(mediaItems: List<MediaItem>) {
+        exoPlayer.setMediaItems(mediaItems)
         exoPlayer.prepare()
     }
 
@@ -83,7 +92,7 @@ class JetAudioServiceHandler @Inject constructor(
         _audioState.value = JetAudioState.CurrentPlaying(exoPlayer.currentMediaItemIndex)
 
         if (isPlaying) {
-            GlobalScope.launch(Dispatchers.IO) {
+            GlobalScope.launch(Dispatchers.Main) {
                 startProgressUpdate()
             }
         } else {

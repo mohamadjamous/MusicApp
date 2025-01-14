@@ -6,19 +6,19 @@ import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaSession
 import androidx.media3.session.MediaSessionService
-import com.example.musicapp.player.notification.JetAudioNotificationManager
+import com.example.musicapp.player.notification.AudioNotificationManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class JetAudioService : MediaSessionService() {
+class AudioService : MediaSessionService() {
 
 
     @Inject
     lateinit var mediaSession: MediaSession
 
     @Inject
-    lateinit var notificationManager: JetAudioNotificationManager
+    lateinit var notificationManager: AudioNotificationManager
 
 
     @UnstableApi

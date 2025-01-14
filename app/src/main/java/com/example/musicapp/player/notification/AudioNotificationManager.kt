@@ -21,7 +21,7 @@ private const val NOTIFICATION_ID = 101
 private const val NOTIFICATION_CHANNEL_NAME = "notification_channel_1"
 private const val NOTIFICATION_CHANNEL_ID = "notification_channel_id_1"
 
-class JetAudioNotificationManager @Inject constructor(
+class AudioNotificationManager @Inject constructor(
     @ApplicationContext private val context: Context,
     private val exoPlayer: ExoPlayer,
 ) {
@@ -66,7 +66,7 @@ class JetAudioNotificationManager @Inject constructor(
         )
 
             .setMediaDescriptionAdapter(
-                JetAudioNotificationAdapter(
+                AudioNotificationAdapter(
                     context = context,
                     pendingIntent = mediaSession.sessionActivity
                 )

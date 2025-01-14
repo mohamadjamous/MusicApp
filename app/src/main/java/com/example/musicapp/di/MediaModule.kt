@@ -7,9 +7,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.session.MediaSession
-import androidx.media3.session.MediaSessionService
-import com.example.musicapp.player.notification.JetAudioNotificationAdapter
-import com.example.musicapp.player.notification.JetAudioNotificationManager
+import com.example.musicapp.player.notification.AudioNotificationManager
 import com.example.musicapp.player.service.JetAudioServiceHandler
 import dagger.Module
 import dagger.Provides
@@ -56,7 +54,7 @@ object MediaModule {
     fun provideNotificationManager(
         @ApplicationContext context: Context,
         player: ExoPlayer
-    ): JetAudioNotificationManager = JetAudioNotificationManager(
+    ): AudioNotificationManager = AudioNotificationManager(
         context = context,
         exoPlayer = player
     )
